@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC Virtual RTX 5090</title>
+<style>
+* {box-sizing:border-box}
+body {
+  margin:0; font-family:Arial,sans-serif;
+  background:#080b12; color:white;
+}
+header {
+  background:#111827; padding:22px;
+  text-align:center; border-bottom:2px solid #00e5ff;
+}
+h1 {color:#00e5ff;margin:0}
+main {max-width:1000px;margin:auto;padding:20px}
+.hero {
+  background:linear-gradient(135deg,#101d35,#142b40);
+  border:1px solid #00bcd4;border-radius:16px;
+  padding:25px;text-align:center;margin-bottom:20px;
+}
+.gpu {font-size:65px}
+h2 {color:#00e5ff}
+.grid {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.card {
+  background:#111827;border:1px solid #26374b;
+  border-radius:12px;padding:20px;
+}
+.card h3 {color:#00e5ff;margin-top:0}
+.value {font-size:21px;font-weight:bold}
+button {
+  background:#00c9e8;color:#001018;
+  border:0;border-radius:8px;padding:13px 20px;
+  font-size:16px;font-weight:bold;cursor:pointer;
+  margin:6px;
+}
+button:hover {background:#7cecff}
+.bar {
+  height:12px;background:#26374b;border-radius:20px;
+  overflow:hidden;margin-top:10px;
+}
+.fill {
+  height:100%;width:0%;background:#00e5ff;
+  transition:width .5s;
+}
+.status {color:#9ca3af}
+footer {text-align:center;padding:25px;color:#9ca3af}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ PC VIRTUAL RTX 5090 ⚡</h1>
+  <p>Simulador de computador gamer extremo</p>
+</header>
+<main>
+  <section class="hero">
+    <div class="gpu">🖥️</div>
+    <h2>ULTIMATE GAMING PC</h2>
+    <p>Configuração de alto desempenho</p>
+    <p class="status" id="status">Desligado</p>
+    <button onclick="ligar()">LIGAR PC</button>
+    <button onclick="desligar()">DESLIGAR</button>
+    <button onclick="reiniciar()">REINICIAR</button>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>🎮 Placa de vídeo</h3>
+      <div class="value">RTX 5090</div>
+      <p>32 GB GDDR7</p>
+      <p>NVIDIA GeForce</p>
+    </div>
+    <div class="card">
+      <h3>⚙️ Processador</h3>
+      <div class="value">AMD Ryzen 9 9950X</div>
+      <p>16 núcleos / 32 threads</p>
+    </div>
+    <div class="card">
+      <h3>🧠 Memória RAM</h3>
+      <div class="value">64 GB DDR5</div>
+      <p>6000 MT/s</p>
+    </div>
+    <div class="card">
+      <h3>💾 Armazenamento</h3>
+      <div class="value">4 TB NVMe</div>
+      <p>SSD de alta velocidade</p>
+    </div>
+    <div class="card">
+      <h3>🔌 Fonte</h3>
+      <div class="value">1200 W</div>
+      <p>80 Plus Platinum</p>
+    </div>
+    <div class="card">
+      <h3>❄️ Refrigeração</h3>
+      <div class="value">Water Cooler</div>
+      <p>360 mm</p>
+    </div>
+  </section>
+
+  <h2>📊 Monitoramento simulado</h2>
+  <section class="grid">
+    <div class="card">
+      <h3>Uso da CPU</h3>
+      <div class="value" id="cpu">0%</div>
+      <div class="bar"><div class="fill" id="cpuBar"></div></div>
+    </div>
+    <div class="card">
+      <h3>Uso da GPU</h3>
+      <div class="value" id="gpu">0%</div>
+      <div class="bar"><div class="fill" id="gpuBar"></div></div>
+    </div>
+    <div class="card">
+      <h3>Memória RAM</h3>
+      <div class="value" id="ram">0 / 64 GB</div>
+      <div class="bar"><div class="fill" id="ramBar"></div></div>
+    </div>
+    <div class="card">
+      <h3>Temperatura</h3>
+      <div class="value" id="temp">-- °C</div>
+ </div> 
+ </seção> 
+ <classe de seção= "Cartão" Estilo="Margin-top:20px">
+ 🛠️ Construir do PC</a2> 
+     <p>Placa-mãe :  X870E</a>
+ <p>GPU :  NVIDIA RTX 5090 32 GB
+ <p>CPU  :   AMD Ryzen 99950X
+      <p>RAM   :   64 GB DDR5</p>
+ <p>SSD  :   NVMe 4 TB</a>
+     <p>Fonte :  1200 W</a>
+     <p>Gabinete :  Torre cheia</a>
+     <p>Refrigeração :  Refrigerador de água 360 mm</p>
+ </seção> 
+</principal>
+<footer>PC Virtual • Simulação visual</footer>
+
+<script>
+Deixe ligado = falso;
+Deixe intervalo = nulo;
+
+função atualizar() {
+ Se (!ligado) retornar; 
+ deixar cpu = Math.floor (10 + Math.random()*45); 
+ deixar gpu = Math.floor (15 + Math.random()*70); 
+ deixar ram = (8 + Math.random()*24).toFixed(1); 
+ deixar temp = Math.floor(35 + Math.random()*25); 
+
+ document.getElementById( "CPU").textContent=cpu+"%";
+ document.getElementById( "GPU").textContent=gpu+"%";
+ document.getElementById( "RAM").textContent=ram+" / 64 GB";
+ document.getElementById( "Temp").textContent=temp+" °C";
+
+ document.getElementById( "Barra de Cup").style.width=CPU+"%";
+ document.getElementById( "Barra de Gup").style.width=GPU+"%";
+ document.getElementById( "Barra de Ramos").style.width=(ram/64*100)+"%";
+}
+função ligar() {
+ Se (ligado) retornar; 
+ ligado=verdadeiro; 
+ document.getElementById( "Estato").textContent="🟢 PC ligado";
+   atualizar(); 
+   intervalo=setInterval(atualizar ,1500);
+}
+função desligar() {
+ ligado=falso; 
+   clearInterval(intervalo); 
+ document.getElementById( "Estato").textContent="🔴 PC desligado";
+NVIDIA RTX 5090.32 GB["CPU","GPU"].forEach(id=>document.getElementById(id).textContent="0%");  
+ document.getElementById( "RAM").textContent="0 / 64 GB";
+ document.getElementById( "Temp").textContent="-- °C";
+  ["Barra de Cup","Barra de Gup","Barra de Ramos"].forEach(id=>document.getElementById(id).style.width="0%");
+}
+Reiniciar() função  {
+    desligar();  
+  definir o tempo limite (ligar  ,800);
+}
+</script>
+"Corpo"
+<html>
